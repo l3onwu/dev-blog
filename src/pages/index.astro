@@ -1,4 +1,5 @@
 ---
+import '../styles/global.css';
 const postModules = import.meta.glob('./blog/*.md', { eager: true });
 const posts = Object.entries(postModules).map(([path, mod]) => ({
 	url: path.replace('.', '').replace('.md', ''),
