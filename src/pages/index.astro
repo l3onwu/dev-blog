@@ -3,7 +3,7 @@ import '../styles/global.css';
 const postModules = import.meta.glob('./blog/*.md', { eager: true });
 const posts = Object.entries(postModules)
 	.map(([path, mod]) => ({
-		url: import.meta.env.BASE_URL + path.replace('./', '').replace('.md', ''),
+		url: import.meta.env.BASE_URL + '/' + path.replace('./', '').replace('.md', ''),
 		title: (mod as any).frontmatter?.title ?? path,
 		date: (mod as any).frontmatter?.date ?? '',
 	}))
